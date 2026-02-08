@@ -5,27 +5,29 @@ Loads environment variables and provides configuration settings
 
 from pydantic_settings import BaseSettings
 from typing import List
+import os
 
 
 class Settings(BaseSettings):
     """Application settings loaded from environment variables"""
     
     # Database
-    DATABASE_URL: str = "sqlite:///./staffsync.db"
+    # Use PostgreSQL in production (Render), SQLite in development
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./staffsync.db")
     
     # JWT Settings
-    SECRET_KEY: str = "your-secret-key-change-in-production"
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "your-secret-key-change-in-production")
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
     
     # CORS
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    CORS_ORIGINS: str = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000,http://localhost:8080")
     
     # Application
     APP_NAME: str = "StaffSync"
     APP_VERSION: str = "1.0.0"
-    DEBUG: bool = True
+    DEBUG: bool = os.getenv("DEBUG", "True").lower() == "true"
     
     # File Upload
     UPLOAD_DIR: str = "./uploads"
@@ -33,7 +35,7 @@ class Settings(BaseSettings):
     
     # Server
     HOST: str = "0.0.0.0"
-    PORT: int = 8000
+    PORT: int = int(os.getenv("PORT", "8000"))
     
     @property
     def cors_origins_list(self) -> List[str]:
