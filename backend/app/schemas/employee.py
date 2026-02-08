@@ -32,8 +32,16 @@ class EmployeeBase(BaseModel):
 class EmployeeCreate(EmployeeBase):
     """Schema for creating a new employee"""
     hire_date: date
-    salary: Optional[Decimal] = Field(None, ge=0, decimal_places=2)
+    salary: Optional[Decimal] = Field(None, ge=0)
     password: str = Field(..., min_length=8, max_length=100)
+    
+    @field_validator('salary')
+    @classmethod
+    def validate_salary(cls, v: Optional[Decimal]) -> Optional[Decimal]:
+        """Round salary to 2 decimal places"""
+        if v is not None:
+            return round(v, 2)
+        return v
     
     @field_validator('password')
     @classmethod
@@ -60,9 +68,25 @@ class EmployeeUpdate(BaseModel):
     phone: Optional[str] = Field(None, pattern=r'^\+?[\d\s\-()]+$')
     department: Optional[str] = Field(None, min_length=2, max_length=100)
     position: Optional[str] = Field(None, min_length=2, max_length=100)
-    salary: Optional[Decimal] = Field(None, ge=0, decimal_places=2)
+    salary: Optional[Decimal] = Field(None, ge=0)
     status: Optional[str] = Field(None, pattern=r'^(active|inactive|on_leave)$')
-    performance_score: Optional[Decimal] = Field(None, ge=0, le=100, decimal_places=1)
+    performance_score: Optional[Decimal] = Field(None, ge=0, le=100)
+    
+    @field_validator('salary')
+    @classmethod
+    def validate_salary(cls, v: Optional[Decimal]) -> Optional[Decimal]:
+        """Round salary to 2 decimal places"""
+        if v is not None:
+            return round(v, 2)
+        return v
+    
+    @field_validator('performance_score')
+    @classmethod
+    def validate_performance_score(cls, v: Optional[Decimal]) -> Optional[Decimal]:
+        """Round performance score to 1 decimal place"""
+        if v is not None:
+            return round(v, 1)
+        return v
     
     @field_validator('phone')
     @classmethod
