@@ -2,25 +2,25 @@
 
 ## 🚀 Get Started in 2 Minutes
 
-### Step 1: Start Backend (30 seconds)
+### Step 1: Start Backend
 ```bash
 cd backend
 pip install -r requirements.txt
+python seed_data.py  # First time only - creates database
 python run.py
 ```
-✅ Backend running at http://localhost:8000
+✅ Backend: http://localhost:8000  
+✅ API Docs: http://localhost:8000/docs
 
-### Step 2: Start Frontend (30 seconds)
+### Step 2: Start Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-✅ Frontend running at http://localhost:8080
+✅ Frontend: http://localhost:8080
 
-### Step 3: Login (10 seconds)
-Open http://localhost:8080 and login:
-
+### Step 3: Login
 **HR Account:**
 - Email: `hr@staffsync.com`
 - Password: `demo123`
@@ -31,38 +31,13 @@ Open http://localhost:8080 and login:
 
 ---
 
-## 🎯 What to Test
-
-### HR Portal Features
-1. **Dashboard** - View statistics and recent activity
-2. **Employees** - Add, edit, delete employees
-3. **Attendance** - View and mark attendance
-4. **Leave Requests** - Approve/reject leave requests
-
-### Employee Portal Features
-1. **Dashboard** - View personal stats
-2. **Clock In/Out** - Mark attendance
-3. **Leave Requests** - Submit leave requests
-4. **Tasks** - Manage tasks
-5. **Documents** - View documents
-
----
-
 ## 📚 Documentation
 
 - **Main README**: `README.md`
-- **Submission Guide**: `SUBMISSION_GUIDE.md`
+- **Backend README**: `backend/README.md`
+- **Frontend README**: `frontend/README.md`
 - **API Docs**: http://localhost:8000/docs
-- **Cleanup Summary**: `PROJECT_CLEANUP_SUMMARY.md`
 
 ---
-
-## ✅ Everything Works!
-
-- ✅ Backend API (23 endpoints)
-- ✅ Frontend UI (15+ pages)
-- ✅ Authentication & Authorization
-- ✅ Database with seed data
-- ✅ All features functional
 
 **Enjoy testing StaffSync!** 🎉
