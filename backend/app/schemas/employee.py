@@ -91,9 +91,8 @@ class EmployeeResponse(BaseModel):
     performance_score: Optional[Decimal]
     created_at: datetime
     
-    model_config = {
-        "from_attributes": True
-    }
+    class Config:
+        orm_mode = True
 
 
 class EmployeeListItem(BaseModel):
@@ -108,6 +107,5 @@ class EmployeeListItem(BaseModel):
     hire_date: date
     status: str
     
-    model_config = {
-        "from_attributes": True
-    }
+    class Config:
+        orm_mode = True

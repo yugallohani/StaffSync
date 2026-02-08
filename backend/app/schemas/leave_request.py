@@ -38,4 +38,4 @@ class LeaveRequestResponse(BaseModel):
     notes: Optional[str] = None
 
     class Config:
-        from_attributes = True
+        orm_mode = True

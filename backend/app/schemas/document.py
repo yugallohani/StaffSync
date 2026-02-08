@@ -30,6 +30,5 @@ class DocumentResponse(BaseModel):
     uploaded_by: str
     uploaded_at: datetime
     
-    model_config = {
-        "from_attributes": True
-    }
+    class Config:
+        orm_mode = True

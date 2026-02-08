@@ -29,8 +29,7 @@ class NotificationResponse(BaseModel):
     read_at: Optional[datetime]
     
     class Config:
-        from_attributes = True
-
+        orm_mode = True
 
 class NotificationSummary(BaseModel):
     """Schema for notification summary"""
