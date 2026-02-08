@@ -58,7 +58,7 @@ class UserResponse(UserBase):
     last_login: Optional[datetime] = None
     
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class TokenData(BaseModel):
     """Schema for token data"""
