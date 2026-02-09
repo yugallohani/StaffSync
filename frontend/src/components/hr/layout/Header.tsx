@@ -61,16 +61,17 @@ export const Header = ({ title, description }: HeaderProps) => {
   };
 
   const handleMarkAsRead = async (notificationId: string) => {
-    try {
-      await hrAPI.markNotificationRead(notificationId);
-      fetchNotifications(); // Refresh notifications
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to mark notification as read",
-        variant: "destructive",
-      });
-    }
+    // Simple toast notification instead of API call
+    toast({
+      title: "Notification marked as read",
+      description: "Message has been acknowledged",
+    });
+    
+    // Update local state to mark as read
+    setNotifications(prev => 
+      prev.map(n => n.id === notificationId ? { ...n, is_read: true } : n)
+    );
+    setUnreadCount(prev => Math.max(0, prev - 1));
   };
 
   const handleMarkAllAsRead = async () => {
