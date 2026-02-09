@@ -12,6 +12,22 @@ A modern, fully functional HR and Employee Management System with separate porta
 
 ---
 
+## ⚠️ Important: About the Data
+
+**The application is fully dynamic and functional** - all data is stored in a real PostgreSQL database and can be created, updated, and deleted through the interface.
+
+**Dummy Data for Testing:**
+The HR portal currently shows 4 pre-loaded employees with Indian names. This dummy data was added for testing and demonstration purposes only. The system is **not static** - you can:
+- Add new employees
+- Edit existing employee information
+- Delete employees
+- Mark attendance
+- All changes are saved to the database in real-time
+
+The dummy data simply provides a starting point to explore the features without having to manually create test data.
+
+---
+
 ## 📸 Application Screenshots
 
 ### Homepage
@@ -116,22 +132,6 @@ Password: employee123
 ```
 
 > **Note:** Creating your own account is recommended to experience the full registration flow and have personalized data.
-
----
-
-## ⚠️ Important: About the Data
-
-**The application is fully dynamic and functional** - all data is stored in a real PostgreSQL database and can be created, updated, and deleted through the interface.
-
-**Dummy Data for Testing:**
-The HR portal currently shows 4 pre-loaded employees with Indian names. This dummy data was added for testing and demonstration purposes only. The system is **not static** - you can:
-- Add new employees
-- Edit existing employee information
-- Delete employees
-- Mark attendance
-- All changes are saved to the database in real-time
-
-The dummy data simply provides a starting point to explore the features without having to manually create test data.
 
 ---
 
