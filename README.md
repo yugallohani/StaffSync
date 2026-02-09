@@ -12,6 +12,22 @@ A modern, fully functional HR and Employee Management System with separate porta
 
 ---
 
+## 📸 Application Screenshots
+
+### Homepage
+![Homepage](https://github.com/yugallohani/StaffSync/assets/homepage-screenshot.png)
+*Modern landing page with clear navigation to HR and Employee portals*
+
+### HR Portal Dashboard
+![HR Dashboard](https://github.com/yugallohani/StaffSync/assets/hr-dashboard-screenshot.png)
+*Comprehensive HR dashboard with real-time statistics, attendance charts, and recent activity feed*
+
+### Employee Portal Dashboard
+![Employee Dashboard](https://github.com/yugallohani/StaffSync/assets/employee-dashboard-screenshot.png)
+*Personalized employee dashboard with performance metrics, tasks, and quick actions*
+
+---
+
 ## 📖 About the Project
 
 StaffSync is a complete HR management solution that provides two distinct portals:
