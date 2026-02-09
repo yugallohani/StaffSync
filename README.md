@@ -4,7 +4,7 @@ A modern, fully functional HR and Employee Management System with separate porta
 
 ## 🌐 Live Application
 
-**Frontend (Vercel):** [Your Vercel URL here]  
+**Frontend (Vercel):** https://staff-sync-ldc9.vercel.app  
 **Backend API (Render):** https://staffsync-backend-w5dd.onrender.com  
 **API Documentation:** https://staffsync-backend-w5dd.onrender.com/docs
 
