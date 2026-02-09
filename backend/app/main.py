@@ -107,6 +107,33 @@ async def general_exception_handler(request: Request, exc: Exception):
 async def startup_event():
     """Initialize database on startup"""
     init_db()
+    
+    # Auto-seed database if empty (production)
+    from .database import SessionLocal
+    from .models.user import User
+    
+    db = SessionLocal()
+    try:
+        # Check if any users exist
+        user_count = db.query(User).count()
+        if user_count == 0:
+            print("📦 Database is empty. Running seed script...")
+            import subprocess
+            import os
+            # Run seed script
+            seed_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "seed_data.py")
+            if os.path.exists(seed_path):
+                subprocess.run(["python", seed_path], check=True)
+                print("✅ Database seeded successfully!")
+            else:
+                print("⚠️ Seed script not found. Please seed manually.")
+        else:
+            print(f"✅ Database already has {user_count} users")
+    except Exception as e:
+        print(f"⚠️ Error checking/seeding database: {e}")
+    finally:
+        db.close()
+    
     print(f"🚀 {settings.APP_NAME} v{settings.APP_VERSION} started")
     print(f"📚 API Documentation: http://{settings.HOST}:{settings.PORT}/docs")
 
