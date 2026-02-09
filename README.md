@@ -15,15 +15,15 @@ A modern, fully functional HR and Employee Management System with separate porta
 ## 📸 Application Screenshots
 
 ### Homepage
-![Homepage](https://github.com/yugallohani/StaffSync/assets/homepage-screenshot.png)
+![Homepage](screenshots/homepage.png)
 *Modern landing page with clear navigation to HR and Employee portals*
 
 ### HR Portal Dashboard
-![HR Dashboard](https://github.com/yugallohani/StaffSync/assets/hr-dashboard-screenshot.png)
+![HR Dashboard](screenshots/hr%20portal.png)
 *Comprehensive HR dashboard with real-time statistics, attendance charts, and recent activity feed*
 
 ### Employee Portal Dashboard
-![Employee Dashboard](https://github.com/yugallohani/StaffSync/assets/employee-dashboard-screenshot.png)
+![Employee Dashboard](screenshots/employee%20portal.png)
 *Personalized employee dashboard with performance metrics, tasks, and quick actions*
 
 ---
